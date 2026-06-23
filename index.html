@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Acanti Dharamshala | Luxury Mountain Villa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#82d1f2;
+--secondary:#5bb7df;
+--dark:#184861;
+--light:#f7fbff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--light);
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+transition:.4s;
+}
+
+.logo{
+font-size:28px;
+font-family:'Playfair Display',serif;
+font-weight:700;
+color:white;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+.book-btn{
+background:white;
+color:var(--dark);
+padding:12px 25px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("YOUR_IMAGE.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+color:white;
+}
+
+.hero h1{
+font-size:5rem;
+font-family:'Playfair Display';
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.3rem;
+line-height:1.8;
+}
+
+.hero-buttons{
+margin-top:40px;
+}
+
+.hero-buttons a{
+display:inline-block;
+margin:10px;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+.primary{
+background:var(--primary);
+color:white;
+}
+
+.secondary{
+border:2px solid white;
+color:white;
+}
+
+/* FEATURES */
+
+.section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:3rem;
+font-family:'Playfair Display';
+color:var(--dark);
+margin-bottom:60px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:10px;
+color:var(--dark);
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.about-text h2{
+font-size:3rem;
+font-family:'Playfair Display';
+color:var(--dark);
+margin-bottom:20px;
+}
+
+.about-text p{
+line-height:2;
+color:#555;
+}
+
+/* EXPERIENCES */
+
+.exp-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.exp{
+background:linear-gradient(135deg,#82d1f2,#5bb7df);
+padding:50px;
+border-radius:25px;
+text-align:center;
+color:white;
+font-size:20px;
+font-weight:600;
+}
+
+/* CTA */
+
+.cta{
+padding:120px 20px;
+background:var(--dark);
+text-align:center;
+color:white;
+}
+
+.cta h2{
+font-size:3rem;
+font-family:'Playfair Display';
+margin-bottom:20px;
+}
+
+.cta a{
+display:inline-block;
+padding:16px 40px;
+background:white;
+color:var(--dark);
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#102d3c;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* MOBILE */
+
+.menu-btn{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#184861;
+flex-direction:column;
+padding:20px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.book-btn{
+display:none;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.title{
+font-size:2.3rem;
+}
+
+.cta h2{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+
+<div class="logo">
+The Acanti
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+<div class="nav-links" id="menu">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#features">Features</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a href="#" class="book-btn">
+Book Now
+</a>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+The Acanti Dharamshala
+</h1>
+
+<p>
+Luxury Mountain Villa nestled among the breathtaking Himalayas.
+Wake up to panoramic mountain views, fresh air, peaceful mornings,
+and unforgettable sunsets.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary">
+Book Your Stay
+</a>
+
+<a href="#about" class="secondary">
+Explore Villa
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features" class="section">
+
+<h2 class="title" data-aos="fade-up">
+Why Stay With Us
+</h2>
+
+<div class="features">
+
+<div class="card" data-aos="fade-up">
+<h3>🏔 Scenic Mountain Views</h3>
+<p>Enjoy panoramic Himalayan landscapes from every room.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>☕ Private Balconies</h3>
+<p>Relax with morning tea overlooking the mountains.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>🔥 Bonfire Evenings</h3>
+<p>Experience cozy nights under the stars.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>📶 Fast WiFi</h3>
+<p>Perfect for workcations and remote travelers.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>🛏 Luxury Rooms</h3>
+<p>Comfortable interiors designed for relaxation.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>🌲 Peaceful Environment</h3>
+<p>Reconnect with nature away from city noise.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<div class="about">
+
+<img src="YOUR_IMAGE.jpg" alt="The Acanti">
+
+<div class="about-text">
+
+<h2>Luxury in the Heart of Dharamshala</h2>
+
+<p>
+The Acanti Dharamshala is a premium mountain villa designed for
+travelers seeking serenity, comfort, and breathtaking Himalayan views.
+Whether you are planning a peaceful getaway, family vacation, or
+workcation, our villa offers an unforgettable experience surrounded
+by nature.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="section">
+
+<h2 class="title">
+Experiences
+</h2>
+
+<div class="exp-grid">
+
+<div class="exp">🌄 Mountain Sunrise</div>
+<div class="exp">🚶 Nature Walks</div>
+<div class="exp">🔥 Bonfire Nights</div>
+<div class="exp">📸 Scenic Photography</div>
+
+</div>
+
+</section>
+
+<section class="cta" id="contact">
+
+<h2>
+Your Himalayan Escape Awaits
+</h2>
+
+<p>
+Book your stay today and experience Dharamshala like never before.
+</p>
+
+<a href="#">
+Reserve Now
+</a>
+
+</section>
+
+<footer>
+© 2026 The Acanti Dharamshala • Luxury Mountain Villa
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000,
+once:true
+});
+
+gsap.from(".hero-title",{
+opacity:0,
+y:100,
+duration:1.5
+});
+
+gsap.from(".hero p",{
+opacity:0,
+y:50,
+delay:.5,
+duration:1.2
+});
+
+gsap.from(".hero-buttons",{
+opacity:0,
+y:50,
+delay:1,
+duration:1.2
+});
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.getElementById("navbar");
+
+if(window.scrollY>50){
+nav.style.background="#184861";
+}
+else{
+nav.style.background="rgba(255,255,255,.1)";
+}
+
+
+
+});
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
