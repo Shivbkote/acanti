@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Acanti Dharamshala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+.getting-section{
+    width:100%;
+    padding:60px 20px;
+    background:#dce2ea;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.getting-card{
+    width:80%;
+    max-width:1050px;
+    height:550px;
+
+    display:grid;
+    grid-template-columns:40% 60%;
+
+    overflow:hidden;
+    border-radius:4px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    background:#fff;
+}
+
+/* LEFT */
+
+.getting-info{
+    background:#21105b;
+    color:#fff;
+    padding:45px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.getting-info h2{
+    font-size:60px;
+    font-weight:300;
+    letter-spacing:6px;
+    line-height:1.1;
+    margin-bottom:35px;
+}
+
+.address p{
+    font-size:15px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.address a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+}
+
+/* HOW TO REACH */
+
+.reach-info{
+    margin-top:35px;
+}
+
+.reach-info h4{
+    margin-bottom:18px;
+    font-size:20px;
+    font-weight:500;
+}
+
+.reach-info ul{
+    list-style:none;
+}
+
+.reach-info li{
+    margin-bottom:14px;
+    font-size:14px;
+    opacity:.9;
+}
+
+/* BUTTON */
+
+.transport-btn{
+    margin-top:auto;
+
+    border:2px solid #fff;
+    color:#fff;
+    text-decoration:none;
+
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    letter-spacing:2px;
+    font-size:13px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.transport-btn:hover{
+    background:#fff;
+    color:#21105b;
+}
+
+/* MAP */
+
+.map-area{
+    width:100%;
+    height:100%;
+}
+
+.map-area iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* TABLET */
+
+@media(max-width:991px){
+
+    .getting-card{
+        width:90%;
+        height:auto;
+        grid-template-columns:1fr;
+    }
+
+    .map-area{
+        height:400px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .getting-section{
+        padding:30px 15px;
+    }
+
+    .getting-card{
+        width:100%;
+        border-radius:15px;
+    }
+
+    .getting-info{
+        padding:30px;
+    }
+
+    .getting-info h2{
+        font-size:42px;
+        letter-spacing:4px;
+    }
+
+    .address p{
+        font-size:14px;
+    }
+
+    .reach-info h4{
+        font-size:18px;
+    }
+
+    .transport-btn{
+        margin-top:30px;
+    }
+
+    .map-area{
+        height:300px;
+    }
+}
+:root{
+    --primary:#72ADCA;
+    --secondary:#A4CCE0;
+    --accent:#56778F;
+    --light:#E1EDF2;
+    --dark:#252A29;
+    --glass:rgba(255,255,255,0.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Manrope',sans-serif;
+    overflow-x:hidden;
+    background:#fff;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.4s;
+}
+
+.navbar.scrolled{
+    background:rgba(255, 255, 255, 0.256);
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding:18px 7%;
+}
+
+.logo{
+    font-size:32px;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    color:white;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:white;
+    left:0;
+    bottom:-8px;
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.hamburger{
+    display:none;
+    cursor:pointer;
+}
+
+.bar{
+    width:28px;
+    height:3px;
+    background:white;
+    margin:6px 0;
+    transition:.4s;
+}
+
+.hamburger.active .bar:nth-child(1){
+    transform:rotate(-45deg) translate(-6px,6px);
+}
+
+.hamburger.active .bar:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active .bar:nth-child(3){
+    transform:rotate(45deg) translate(-6px,-6px);
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('./images/homepage/heroimg.jpeg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+    color:white;
+    animation:fadeUp 1.4s ease;
+}
+
+.hero-sub{
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:90px;
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+    opacity:.95;
+}
+
+.hero-btns{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.4s;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:white;
+    color:var(--dark);
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:1px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--dark);
+}
+
+/* SCROLL INDICATOR */
+
+.scroll{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    animation:bounce 2s infinite;
+}
+
+/* STORY PREVIEW */
+
+.story-preview{
+    padding:120px 10%;
+    background:var(--light);
+}
+
+.story-container{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.story-container h2{
+    font-size:60px;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--dark);
+    margin-bottom:30px;
+}
+
+.story-container p{
+    font-size:18px;
+    line-height:2;
+    color:#555;
+}
+
+/* //room section css// */
+
+.rooms-preview{
+padding:120px 8%;
+background:#fff;
+}
+
+.rooms-header{
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:60px;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.section-tag{
+letter-spacing:3px;
+font-size:13px;
+color:#72ADCA;
+}
+
+.rooms-header h2{
+font-family:'Cormorant Garamond',serif;
+font-size:70px;
+margin:15px 0;
+color:#252A29;
+}
+
+.all-room-btn{
+padding:16px 35px;
+border:1px solid #56778F;
+text-decoration:none;
+color:#56778F;
+transition:.4s;
+}
+
+.all-room-btn:hover{
+background:#56778F;
+color:white;
+}
+
+.room-slider{
+display:flex;
+gap:30px;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+padding-bottom:20px;
+}
+
+.room-slider::-webkit-scrollbar{
+height:8px;
+}
+
+.room-slider::-webkit-scrollbar-thumb{
+background:#72ADCA;
+}
+
+.room-card{
+min-width:450px;
+scroll-snap-align:start;
+border-radius:20px;
+overflow:hidden;
+background:white;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.room-card:hover{
+transform:translateY(-10px);
+}
+
+.room-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.room-content{
+padding:25px;
+}
+
+.room-content h3{
+font-size:30px;
+font-family:'Cormorant Garamond',serif;
+}
+
+.room-content p{
+margin-top:10px;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.room-card{
+min-width:320px;
+}
+
+.rooms-header h2{
+font-size:50px;
+}
+}
+
+/* //room section css end here */
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%,20%,50%,80%,100%{
+        transform:translateX(-50%) translateY(0);
+    }
+    40%{
+        transform:translateX(-50%) translateY(-10px);
+    }
+    60%{
+        transform:translateX(-50%) translateY(-5px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.hero h1{
+    font-size:70px;
+}
+
+.nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.95);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:.5s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.nav-links a{
+    font-size:22px;
+}
+
+.hamburger{
+    display:block;
+    z-index:1001;
+}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.story-container h2{
+    font-size:42px;
+}
+
+.logo{
+    font-size:28px;
+}
+}
+
+/*=============================
+ Instagram Section
+=============================*/
+
+.instagram-section{
+
+    position:relative;
+    overflow:hidden;
+
+    padding:10px 5%;
+
+    background:
+    linear-gradient(180deg,#f7f9f5,#eef5ee);
+
+}
+
+
+.instagram-bg{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(circle,#2b593d25,transparent 70%);
+
+    top:-200px;
+    right:-180px;
+
+    border-radius:50%;
+    filter:blur(50px);
+
+    animation:float 12s infinite ease-in-out;
+
+}
+
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(35px);}
+100%{transform:translateY(0);}
+
+}
+
+
+.container{
+
+max-width:1450px;
+margin:auto;
+
+position:relative;
+z-index:2;
+
+}
+
+
+.section-title{
+
+text-align:center;
+margin-bottom:70px;
+
+}
+
+
+.section-title span{
+
+display:inline-block;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+color:#b88b3d;
+
+font-weight:700;
+
+text-transform:uppercase;
+
+margin-bottom:15px;
+
+}
+
+
+.section-title h2{
+
+font-size:52px;
+
+font-weight:700;
+
+line-height:1.15;
+
+color:#173321;
+
+margin-bottom:18px;
+
+}
+
+
+.section-title h2 span{
+
+color:#b88b3d;
+
+}
+
+
+.section-title p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:18px;
+
+color:#657568;
+
+line-height:32px;
+
+}
+
+
+.insta-card{
+
+position:relative;
+
+border-radius:35px;
+
+padding:40px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.08),
+
+0 0 0 1px rgba(255,255,255,.4);
+
+transition:.45s;
+
+}
+
+
+.insta-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 45px 80px rgba(0,0,0,.15);
+
+}
+
+
+.card-glow{
+
+position:absolute;
+
+inset:-2px;
+
+border-radius:35px;
+
+padding:2px;
+
+background:
+
+linear-gradient(135deg,
+
+#d8b56b,
+
+#ffffff,
+
+#2b593d,
+
+#d8b56b);
+
+background-size:300%;
+
+animation:borderMove 8s linear infinite;
+
+z-index:-1;
+
+}
+
+
+@keyframes borderMove{
+
+0%{background-position:0 0;}
+100%{background-position:300% 0;}
+
+}
+
+
+.trust-feed{
+
+width:100%;
+
+overflow:hidden;
+
+}
+
+
+/* Trustindex Feed */
+
+.trust-feed iframe,
+.trust-feed .ti-widget,
+.trust-feed .ti-feed{
+
+width:100%!important;
+
+border:none!important;
+
+background:transparent!important;
+
+}
+
+
+.instagram-section img{
+
+transition:.45s;
+
+}
+
+
+.instagram-section img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* Responsive */
+
+@media(max-width:991px){
+
+.section-title h2{
+
+font-size:40px;
+
+}
+
+.insta-card{
+
+padding:20px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.instagram-section{
+
+padding:80px 20px;
+
+}
+
+.section-title h2{
+
+font-size:32px;
+
+}
+
+.section-title p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+}
+
+
+/*==================================
+ GOOGLE REVIEWS SECTION
+===================================*/
+
+.google-review-section{
+    position:relative;
+    padding:120px 8%;
+    background:linear-gradient(180deg,#f7f8f4 0%,#eef4ee 100%);
+    overflow:hidden;
+}
+
+.google-review-section::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#2e5c4220,transparent 70%);
+    top:-250px;
+    right:-150px;
+    border-radius:50%;
+    filter:blur(40px);
+}
+
+.google-review-section::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle,#c8a86415,transparent 70%);
+    bottom:-180px;
+    left:-120px;
+    border-radius:50%;
+    filter:blur(40px);
+}
+
+.container{
+    max-width:1450px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+/*=========================
+HEADING
+==========================*/
+
+.review-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.review-heading .sub-title{
+    display:inline-block;
+    color:#c8a864;
+    font-size:14px;
+    letter-spacing:4px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.review-heading h2{
+    font-size:52px;
+    color:#173321;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.review-heading h2 span{
+    color:#c8a864;
+}
+
+.review-heading p{
+    max-width:760px;
+    margin:auto;
+    color:#66746a;
+    line-height:30px;
+    font-size:18px;
+}
+
+/*=========================
+MAIN GRID
+==========================*/
+
+.review-layout{
+
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:40px;
+    align-items:stretch;
+
+}
+
+/*=========================
+LEFT CARD
+==========================*/
+
+.review-info{
+
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    padding:45px;
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.08);
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.review-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    border-radius:35px;
+
+    background:linear-gradient(135deg,#d7bb72,#ffffff,#25533b,#d7bb72);
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+.google-logo{
+
+    width:70px;
+    height:70px;
+
+    margin:auto auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.google-logo img{
+
+    width:60px;
+
+}
+
+.review-info h1{
+
+    font-size:75px;
+
+    color:#173321;
+
+    margin-bottom:8px;
+
+}
+
+.stars{
+
+    color:#f5b400;
+
+    font-size:24px;
+
+    letter-spacing:4px;
+
+    margin-bottom:10px;
+
+}
+
+.review-info h3{
+
+    color:#173321;
+
+    margin-bottom:10px;
+
+}
+
+.review-info p{
+
+    color:#666;
+
+    line-height:28px;
+
+}
+
+.review-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:35px 0;
+
+}
+
+.review-stats h4{
+
+    font-size:30px;
+
+    color:#173321;
+
+}
+
+.review-stats span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.btn-review{
+
+    display:inline-flex;
+
+    padding:15px 34px;
+
+    background:#173321;
+
+    color:#fff;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+}
+
+.btn-review:hover{
+
+    background:#c8a864;
+
+    transform:translateY(-4px);
+
+}
+
+/*=========================
+RIGHT SIDE
+==========================*/
+
+.review-feed-card{
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:35px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.08);
+
+}
+
+.review-feed-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    border-radius:35px;
+
+    background:linear-gradient(135deg,#d7bb72,#ffffff,#25533b,#d7bb72);
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+.feed-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.feed-header h3{
+
+    color:#173321;
+
+    font-size:28px;
+
+}
+
+.feed-header span{
+
+    color:#c8a864;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.google-feed{
+
+    min-height:520px;
+
+    border-radius:25px;
+
+    background:#fff;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid rgba(0,0,0,.05);
+
+}
+
+/*=========================
+BOTTOM
+==========================*/
+
+.bottom-trust{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+    margin-top:70px;
+
+}
+
+.trust-item{
+
+    background:#fff;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    color:#173321;
+
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.trust-item:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*=========================
+HOVER
+==========================*/
+
+.review-info,
+.review-feed-card{
+
+    transition:.4s;
+
+}
+
+.review-info:hover,
+.review-feed-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 40px 70px rgba(0,0,0,.12);
+
+}
+
+/*=========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:991px){
+
+.review-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.review-heading h2{
+
+font-size:40px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.google-review-section{
+
+padding:80px 25px;
+
+}
+
+.review-heading h2{
+
+font-size:32px;
+
+}
+
+.review-heading p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+.feed-header{
+
+flex-direction:column;
+
+gap:10px;
+
+text-align:center;
+
+}
+
+.review-stats{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+}
+
+
+/*====================================================
+        PREMIUM AMENITIES SECTION
+====================================================*/
+
+.amenities-section{
+    position:relative;
+    padding:110px 8%;
+    background:#eeece4;
+    overflow:hidden;
+}
+
+/* Background Glow */
+
+.amenities-section::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(200,168,100,.08);
+    border-radius:50%;
+    top:-180px;
+    right:-180px;
+    filter:blur(90px);
+}
+
+.amenities-section::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(33,63,48,.08);
+    border-radius:50%;
+    left:-120px;
+    bottom:-120px;
+    filter:blur(80px);
+}
+
+.amenities-section .container{
+    max-width:1350px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+/*========================
+ Heading
+=========================*/
+
+.section-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-heading span{
+
+    display:inline-block;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#C8A864;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+}
+
+.section-heading h2{
+
+    font-size:52px;
+
+    color:#173321;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    font-family:serif;
+}
+
+.section-heading p{
+
+    width:720px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    color:#666;
+
+    line-height:30px;
+
+    font-size:17px;
+}
+
+/*========================
+ Grid
+=========================*/
+
+.amenities-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+/*========================
+ Card
+=========================*/
+
+.amenity-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:22px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.45s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.06);
+
+}
+
+/* Animated Border */
+
+.amenity-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+    135deg,
+    #C8A864,
+    transparent,
+    #1F3D2E,
+    transparent,
+    #C8A864
+    );
+
+    background-size:300%;
+
+    animation:borderMove 7s linear infinite;
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+@keyframes borderMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+/*========================
+ Hover Glow
+=========================*/
+
+.amenity-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.12);
+
+}
+
+.amenity-card:hover .icon{
+
+    transform:rotate(10deg) scale(1.15);
+
+    color:#C8A864;
+
+}
+
+/*========================
+ Icon
+=========================*/
+
+.icon{
+
+    width:75px;
+
+    height:75px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#F4EFE5;
+
+    color:#173321;
+
+    font-size:30px;
+
+    transition:.4s;
+
+    margin-bottom:25px;
+
+}
+
+/*========================
+ Title
+=========================*/
+
+.amenity-card h4{
+
+    font-size:20px;
+
+    color:#173321;
+
+    margin:0;
+
+    font-weight:600;
+
+}
+
+/*========================
+ Floating Animation
+=========================*/
+
+.amenity-card:nth-child(odd){
+
+    animation:floatOne 5s ease-in-out infinite;
+
+}
+
+.amenity-card:nth-child(even){
+
+    animation:floatTwo 6s ease-in-out infinite;
+
+}
+
+@keyframes floatOne{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatTwo{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*========================
+ Responsive
+=========================*/
+
+@media(max-width:1200px){
+
+    .amenities-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .amenities-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .section-heading h2{
+
+        font-size:40px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .amenities-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .amenities-section{
+
+        padding:80px 20px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:32px;
+
+    }
+
+    .section-heading p{
+
+        font-size:15px;
+
+        line-height:28px;
+
+    }
+
+}
+
+/* Grid */
+
+.amenities-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px 35px;
+}
+
+/* Item */
+
+.item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 20px;
+    border:1px solid #e8eef2;
+    border-radius:14px;
+    background:#fff;
+}
+
+.item i{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:var(--light);
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.item span{
+    color:var(--dark);
+    font-size:16px;
+    font-weight:500;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.title h2{
+    font-size:34px;
+}
+
+.amenities{
+    padding:70px 20px;
+}
+
+.amenities-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* Change logo and nav text color after leaving home section */
+.navbar.scrolled .logo{
+    color: #000;
+}
+
+.navbar.scrolled .nav-links a{
+    color: #000;
+}
+
+.navbar.scrolled .nav-links a::after{
+    background: #000;
+}
+
+
+
+.premium-footer{
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(
+        180deg,
+        #050507,
+        #090916,
+        #120d25
+    );
+
+    padding:120px 20px 50px;
+    color:#fff;
+}
+
+/* GLOW EFFECTS */
+
+.footer-glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(180px);
+}
+
+.footer-glow-1{
+    width:350px;
+    height:350px;
+    background:#5c4cff;
+    top:-150px;
+    left:-100px;
+    opacity:.25;
+}
+
+.footer-glow-2{
+    width:300px;
+    height:300px;
+    background:#d4a94f;
+    bottom:-100px;
+    right:-100px;
+    opacity:.15;
+}
+
+/* CONTENT */
+
+.footer-content{
+    position:relative;
+    z-index:10;
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
+
+/* LOGO */
+
+.footer-logo{
+    font-size:80px;
+    font-weight:300;
+    letter-spacing:18px;
+    margin-bottom:15px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #d4a94f,
+        #ffffff,
+        #9d89ff,
+        #ffffff
+    );
+
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:logoAnimation 10s linear infinite;
+}
+
+@keyframes logoAnimation{
+    from{
+        background-position:0%;
+    }
+    to{
+        background-position:300%;
+    }
+}
+
+.footer-tagline{
+    color:rgba(255,255,255,.7);
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:60px;
+}
+
+/* NAV */
+
+.footer-nav{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:45px;
+    flex-wrap:wrap;
+    margin-bottom:60px;
+}
+
+.footer-nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    letter-spacing:2px;
+    position:relative;
+}
+
+.footer-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:0;
+    height:2px;
+    background:#d4a94f;
+    transition:.4s;
+}
+
+.footer-nav a:hover::after{
+    width:100%;
+}
+
+/* CONTACT CARDS */
+
+.footer-contact{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-bottom:60px;
+}
+
+.contact-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:18px 30px;
+    border-radius:60px;
+    color:rgba(255,255,255,.8);
+}
+
+/* SOCIAL */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:60px;
+}
+
+.social-icons a{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-10px);
+    background:#d4a94f;
+    box-shadow:0 20px 40px rgba(212,169,79,.4);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+    padding-top:35px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:rgba(255,255,255,.5);
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .premium-footer{
+        padding:80px 25px 40px;
+    }
+
+    .footer-logo{
+        font-size:50px;
+        letter-spacing:10px;
+    }
+
+    .footer-tagline{
+        font-size:15px;
+        margin-bottom:45px;
+    }
+
+    .footer-nav{
+        gap:25px;
+    }
+
+    .contact-card{
+        width:100%;
+        border-radius:20px;
+    }
+
+    .social-icons a{
+        width:50px;
+        height:50px;
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <script>
+     const navbar = document.querySelector('.navbar');
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY >= hero.offsetHeight - 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+const card=document.querySelector(".insta-card");
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+
+card.style.setProperty("--x",x+"px");
+card.style.setProperty("--y",y+"px");
+
+});
+
+});
+    </script>
+
+<nav class="navbar">
+
+<div class="logo">
+ACANTI
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#">Home</a></li>
+<li><a href="#story">About</a></li>
+<li><a href="#Rooms">Rooms</a></li>
+<li><a href="#Living">Acanti Living</a></li>
+<li><a href="#footer">Contact</a></li>
+
+</ul>
+
+<div class="hamburger">
+
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+
+</div>
+
+</nav>
+
+<section class="hero" id="hero">
+
+<div class="hero-content">
+
+<div class="hero-sub">
+Luxury Mountain Stay • Dharamshala
+</div>
+
+<h1>
+The Acanti
+</h1>
+
+<p>
+A home that treads softly.
+Built with care, surrounded by mountains, crafted for slow living and meaningful experiences.
+</p>
+
+<div class="hero-btns">
+
+<a href="#" class="btn btn-primary">
+Explore Rooms
+</a>
+
+<a href="#story" class="btn btn-outline">
+Our Story
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+↓ Scroll
+</div>
+
+</section>
+
+<section class="story-preview" id="story">
+
+<div class="story-container">
+
+<h2>
+Story of Acanti
+</h2>
+
+<p>
+You may notice our walls breathe a little differently here. Pipes that show, floors that feel light, spaces that whisper instead of shout. This is not by accident. It's by choice. We built with low-impact materials because Dharamshala's mountains are precious and fragile. Heavy concrete demands a heavy price from the earth. We chose the lighter path: less carbon, less load, more respect for the land that holds us all. What you will find is a home that treads softly, a space that carries care, not just comfort. Thank you for being part of this small act of love for our planet.
+</p>
+
+</div>
+
+</section>
+
+<!-- // rooms  section// -->
+<section class="rooms-preview" id="Rooms">
+
+<div class="rooms-header">
+
+<div>
+<span class="section-tag">ACCOMMODATION</span>
+
+<h2>Rooms & Suites</h2>
+
+<p>
+Thoughtfully designed spaces that blend comfort,
+mountain views and sustainable living.
+</p>
+</div>
+
+<a href="rooms.html" class="all-room-btn">
+All Rooms & Suites →
+</a>
+
+</div>
+
+<div class="room-slider">
+
+<div class="room-card">
+<img src="images\Deluxe Room\img.avif">
+
+<div class="room-content">
+<h3>Deluxe Room</h3>
+<p>1 Double Bed · Upper Floor</p>
+</div>
+</div>
+
+<div class="room-card">
+<img src="images\Premium room\img6.avif">
+
+<div class="room-content">
+<h3>Premium Room</h3>
+<p>Double Bed + Extra Mattress</p>
+</div>
+</div>
+
+<div class="room-card">
+<img src="images\Deluxe Room\img.avif">
+
+<div class="room-content">
+<h3>Loft Room</h3>
+<p>Double Bed + Extra Mattress</p>
+</div>
+</div>
+
+<div class="room-card">
+<img src="images\Deluxe Room\img.avif">
+
+<div class="room-content">
+<h3>Family Room</h3>
+<p>2 Bunk Beds + Double Bed</p>
+</div>
+</div>
+
+<div class="room-card">
+<img src="images\Deluxe Room\img.avif">
+
+<div class="room-content">
+<h3>Family Loft Room</h3>
+<p>2 Double Beds + Mattress</p>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- //end of rooms section// -->
+
+
+<script>
+
+const hamburger=document.querySelector('.hamburger');
+const navLinks=document.querySelector('.nav-links');
+
+hamburger.addEventListener('click',()=>{
+
+hamburger.classList.toggle('active');
+navLinks.classList.toggle('active');
+
+});
+
+window.addEventListener('scroll',()=>{
+
+const navbar=document.querySelector('.navbar');
+
+navbar.classList.toggle('scrolled',window.scrollY>50);
+
+});
+
+document.querySelectorAll('.nav-links a').forEach(link=>{
+
+link.addEventListener('click',()=>{
+
+hamburger.classList.remove('active');
+navLinks.classList.remove('active');
+
+});
+
+});
+
+</script>
+<script>
+    
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper('.homeRoomSlider',{
+  slidesPerView:2,
+  spaceBetween:30,
+  loop:true,
+  autoplay:{
+    delay:2500
+  },
+
+  breakpoints:{
+    320:{
+      slidesPerView:1
+    },
+    768:{
+      slidesPerView:2
+    }
+  }
+});
+</script>
+
+
+
+<!-- ===============================
+      PREMIUM AMENITIES SECTION
+================================ -->
+
+<section class="amenities-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>OUR FACILITIES</span>
+
+            <h2>Luxury Amenities</h2>
+
+            <p>
+                Thoughtfully curated comforts surrounded by peaceful mountains,
+                fresh pine forests and breathtaking valley views.
+            </p>
+
+        </div>
+
+         <div class="amenities-grid">
+
+            <div class="item">
+                <i class="fa-solid fa-wifi"></i>
+                <span>Free WiFi</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-car"></i>
+                <span>Free Parking</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-bed"></i>
+                <span>Luxury Rooms</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Restaurant</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <span>Mountain View</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-fire"></i>
+                <span>Bonfire</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-mug-hot"></i>
+                <span>Breakfast</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-shower"></i>
+                <span>Hot Water</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <span>Room Service</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-tv"></i>
+                <span> event Hosting</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-snowflake"></i>
+                <span>Air Conditioning</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>24×7 Security</span>
+            </div>
+
+        </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="instagram-section" id="Living">
+
+    <div class="instagram-bg"></div>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>FOLLOW OUR JOURNEY</span>
+
+            <h2>
+                Moments from
+                <span>Instagram</span>
+            </h2>
+
+            <p>
+                Experience the beauty of mountain living, peaceful mornings,
+                cozy stays, unforgettable sunsets and memorable guest moments.
+            </p>
+
+        </div>
+
+        <div class="insta-card">
+
+            <div class="card-glow"></div>
+
+            <div class="trust-feed">
+
+                <script defer async src='https://cdn.trustindex.io/loader-feed.js?6d23118753be15536926461b984'></script>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+</section>
+
+
+
+
+<!-- ===========================
+      GOOGLE REVIEWS SECTION
+============================ -->
+
+<section class="google-review-section">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="review-heading">
+
+            <span class="sub-title">
+                ★ GUEST EXPERIENCES
+            </span>
+
+            <h2>
+                Loved by Our
+                <span>Guests</span>
+            </h2>
+
+            <p>
+                Every stay tells a story. Discover why travelers from around
+                the world choose The Acanti Dharamshala for peaceful mountain
+                escapes and unforgettable hospitality.
+            </p>
+
+        </div>
+
+
+       
+
+<script defer async src='https://cdn.trustindex.io/loader.js?98bbbf37597f156763169904665'></script>
+
+       
+
+        </div>
+
+
+    </div>
+
+</section>
+<section class="getting-section">
+    <div class="getting-card">
+
+        <!-- Left Content -->
+        <div class="getting-info">
+
+            <h2>GETTING<br>HERE</h2>
+
+            <div class="address">
+                <p>
+                    Acanti Resort Dharamshala<br>
+                    Village Dharamkot, Dharamshala - 176219,<br>
+                    Himachal Pradesh, India
+                </p>
+
+                <a href="tel:+911892221234">
+                    +91 189 222 1234
+                </a>
+            </div>
+
+            <div class="reach-info">
+                <h4>How to Reach Acanti</h4>
+
+                <ul>
+                    <li>🚕 Taxi from Dharamshala (10-15 min)</li>
+                    <li>🛵 Rental Scooters available nearby</li>
+                    <li>🚌 Local Bus to Dharamkot</li>
+                    <li>🚶 Scenic mountain walk (4 km)</li>
+                </ul>
+            </div>
+
+            <a href="#" class="transport-btn">
+                PARKING & TRANSPORTATION
+            </a>
+
+        </div>
+
+        <!-- Right Map -->
+        <div class="map-area">
+            <iframe
+                src="https://www.google.com/maps?q=Dharamkot,Dharamshala,Himachal+Pradesh&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</section>
+<footer  id="footer" class="premium-footer">
+
+    <div class="footer-glow footer-glow-1"></div>
+    <div class="footer-glow footer-glow-2"></div>
+
+    <div class="footer-content">
+
+        <h2 class="footer-logo">
+            ACANTI
+        </h2>
+
+        <p class="footer-tagline">
+            Where Luxury Meets The Himalayas
+        </p>
+
+        <ul class="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="footer-contact">
+
+            <div class="contact-card">
+                📍 Dharamkot, Dharamshala, Himachal Pradesh
+            </div>
+
+            <div class="contact-card">
+                📞 +91 189 222 1234
+            </div>
+
+            <div class="contact-card">
+                ✉️ reservations@acanti.com
+            </div>
+
+        </div>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ACANTI RESORT • ALL RIGHTS RESERVED
+        </div>
+
+    </div>
+
+</footer>
+</body>
+
+
+
+
+
+</html>
